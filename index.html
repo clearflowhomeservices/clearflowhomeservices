@@ -195,6 +195,20 @@
       line-height:1.5;
       text-align:center;
     }
+    .micro strong{color:#111827}
+
+    /* Small “trust note” inside hero card */
+    .note{
+      margin-top:12px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fafafa;
+      color:#374151;
+      font-size:12.5px;
+      line-height:1.45;
+      text-align:left;
+    }
 
     /* TRUST ROW */
     .trust{
@@ -308,6 +322,46 @@
     .embedhead strong{font-size:14px}
     .embedhead span{font-size:12px;color:var(--muted)}
 
+    /* FAQ (native dropdowns) */
+    .faq{padding-top:0}
+    details.faq-item{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 16px;
+      background:#fff;
+      margin:10px 0;
+    }
+    details.faq-item summary{
+      cursor:pointer;
+      font-weight:900;
+      color:#111827;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    details.faq-item summary::-webkit-details-marker{display:none}
+    .chev{
+      width:18px; height:18px; flex:0 0 18px;
+      transition:transform .18s ease;
+      opacity:.75;
+    }
+    details[open] .chev{transform:rotate(180deg)}
+    .faq-answer{
+      margin-top:10px;
+      color:#374151;
+      line-height:1.75;
+      font-size:14.6px;
+    }
+
+    /* Privacy */
+    .policy h2{margin:0 0 10px}
+    .policy h3{margin:16px 0 8px; font-size:16px}
+    .policy p{margin:0 0 12px; color:#374151; line-height:1.85; font-size:14.6px}
+    .policy ul{margin:0 0 12px; padding-left:18px; color:#374151; line-height:1.85; font-size:14.6px}
+    .muted{color:var(--muted)}
+
     /* SEO */
     .seo{
       background:#fff;
@@ -404,7 +458,7 @@
           </div>
           <div class="value-item">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M12 2v20M2 12h20" /></svg>
-            <div><strong>Fast Response</strong><span>Same-week outreach</span></div>
+            <div><strong>&lt; 24 Hours</strong><span>Average response time</span></div>
           </div>
           <div class="value-item">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
@@ -440,6 +494,12 @@
             Get Free Assessment
           </button>
 
+          <div class="note">
+            <strong>Service area:</strong> Currently matching homeowners across Northeast Alabama & nearby areas.<br/>
+            <strong>Response time:</strong> We typically reach out in <strong>less than 24 hours</strong> (often same day).<br/>
+            <span class="muted">ClearFlow is a referral/matching service — the contractors are independent businesses.</span>
+          </div>
+
           <div class="micro">
             <strong>Heads up:</strong> drainage problems usually get worse after repeated rain.
             Getting this assessed now is often the difference between a simple fix and a costly repair later.
@@ -469,7 +529,6 @@
   <section class="section" id="how">
     <div class="container two-col">
       <div class="imgbox">
-        <!-- SECOND IMAGE = hero.jpg -->
         <img src="hero.jpg" alt="Drainage and foundation water management near a home" />
       </div>
 
@@ -515,7 +574,7 @@
     </div>
   </section>
 
-  <!-- MID IMAGE + EDUCATION (THIRD IMAGE = Pic3.jpeg) -->
+  <!-- MID IMAGE + EDUCATION -->
   <section class="section" id="education">
     <div class="container two-col">
       <div class="imgbox">
@@ -573,7 +632,7 @@
     </div>
   </section>
 
-  <!-- FINAL CTA + LAST IMAGE (Pic4.jpg) -->
+  <!-- FINAL CTA -->
   <section class="section" id="finalcta">
     <div class="container two-col">
       <div class="card">
@@ -604,7 +663,7 @@
           If your situation is urgent (active water near the foundation, wet crawl space, major erosion), submit now so a pro can reach out quickly.
         </p>
         <p class="lead" style="margin-bottom:0;">
-          <strong>Best practice:</strong> book before the next heavy rain — water damage often accelerates after repeated storms.
+          <strong>Response time:</strong> We typically reach out in <strong>less than 24 hours</strong>.
         </p>
       </div>
 
@@ -621,6 +680,69 @@
             loading="lazy" width="100%" height="625" frameborder="0" marginheight="0" marginwidth="0"
             title="Get in touch with a local pro"></iframe>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="card">
+        <h2>Frequently asked questions</h2>
+        <p class="lead" style="margin-bottom:6px;">
+          Quick answers to the most common questions homeowners have before booking.
+        </p>
+
+        <details class="faq-item">
+          <summary>
+            How fast will someone contact me?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            We typically reach out in <strong>less than 24 hours</strong> (often same day) to confirm details and route you to the best-fit local pro.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Is the assessment really free?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            Yes — submitting the request and getting matched is free. Any pricing for inspection or repairs depends on the contractor and your specific project.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What problems do you help with?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            Most commonly: <strong>downspouts dumping too close</strong>, <strong>water pooling after rain</strong>, <strong>yard drainage</strong>,
+            <strong>erosion/washout</strong>, <strong>grading issues</strong>, and <strong>crawl space moisture concerns</strong>.
+            We route requests to the right contractor type based on symptoms.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Are you the contractor?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            ClearFlow is a <strong>referral/matching service</strong>. The contractors we connect you with are independent businesses who handle inspections,
+            quotes, and any work performed.
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -665,6 +787,72 @@
     </div>
   </section>
 
+  <!-- PRIVACY POLICY (REAL) -->
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="card policy">
+        <h2>Privacy Policy</h2>
+        <p class="muted">Last updated: <span id="ppDate">2026-01-10</span></p>
+
+        <p>
+          ClearFlow Home Services (“ClearFlow,” “we,” “us”) respects your privacy. This Privacy Policy explains what information we collect,
+          how we use it, and the choices you have. By submitting information through our site or forms, you agree to this policy.
+        </p>
+
+        <h3>Information we collect</h3>
+        <ul>
+          <li><strong>Contact information</strong> you provide (such as name, phone number, email address).</li>
+          <li><strong>Location details</strong> (such as ZIP code, city, address area) to help match you with a local contractor.</li>
+          <li><strong>Project information</strong> (such as the issue you’re experiencing, photos, or notes you provide).</li>
+          <li><strong>Basic website usage data</strong> (like device/browser info) if collected automatically by hosting or embedded form tools.</li>
+        </ul>
+
+        <h3>How we use your information</h3>
+        <ul>
+          <li>To <strong>contact you</strong> and confirm details about your request.</li>
+          <li>To <strong>match your request</strong> with an appropriate local contractor or service provider.</li>
+          <li>To improve our process and provide better routing based on common issues.</li>
+          <li>To prevent spam, fraud, or misuse.</li>
+        </ul>
+
+        <h3>How we share your information</h3>
+        <p>
+          The primary purpose of this site is to connect homeowners with local service providers. If you submit a request, we may share your contact and
+          project details with one or more <strong>independent contractors</strong> so they can contact you with scheduling, quotes, or next steps.
+          These contractors are separate businesses and are responsible for their own services and communications.
+        </p>
+
+        <h3>Your choices</h3>
+        <ul>
+          <li>You can request that we <strong>delete</strong> your information by contacting us.</li>
+          <li>You can ask us not to share your information with additional contractors.</li>
+          <li>If you no longer want to be contacted, tell us and we will stop outreach (where reasonably possible).</li>
+        </ul>
+
+        <h3>Data retention</h3>
+        <p>
+          We keep information only as long as needed to fulfill your request, support operations, and comply with legal obligations. We may retain limited
+          records to prevent fraud or repeated spam submissions.
+        </p>
+
+        <h3>Security</h3>
+        <p>
+          We take reasonable steps to protect your information. However, no method of transmission or storage is 100% secure, and we cannot guarantee absolute security.
+        </p>
+
+        <h3>Third-party tools</h3>
+        <p>
+          Our site may use third-party tools (such as embedded forms) to collect submissions. Those providers may process data under their own policies.
+        </p>
+
+        <h3>Contact</h3>
+        <p style="margin-bottom:0;">
+          For privacy requests, contact us at: <strong>clearflowhomeservices@gmail.com</strong> (replace with your preferred email).
+        </p>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div>
@@ -676,7 +864,8 @@
         <a href="#how">How It Works</a>
         <a href="#fixes">Common Fixes</a>
         <a href="#formembed">Get Matched</a>
-        <a href="#" onclick="alert('Add your Privacy Policy link here (or link to a page).'); return false;">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <a href="#privacy">Privacy</a>
       </div>
     </div>
   </footer>
@@ -693,7 +882,6 @@
         zipEl.focus();
         return false;
       }
-      // gently scroll toward embedded form after popup opens
       setTimeout(() => {
         const target = document.getElementById('formembed');
         if(target) target.scrollIntoView({behavior:'smooth'});
