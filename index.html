@@ -3,485 +3,253 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ClearFlow Home Services | Drainage & Water Management</title>
-  <meta name="description" content="Worried about water pooling near your foundation? Get a free drainage assessment and get matched with trusted local contractors." />
+
+  <title>ClearFlow Home Services | Drainage & Water Management Near You</title>
+  <meta name="description" content="Standing water near your home? Get a free drainage assessment and get matched with trusted local pros for downspouts, grading, and water control." />
+
+  <!-- TALLY EMBED SCRIPT (required for both standard + popup) -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
   <style>
     :root{
       --bg:#ffffff;
       --text:#1a1a1a;
       --muted:#6b7280;
       --line:#e5e7eb;
-      --brand:#1f7a4f;     /* green */
-      --brand2:#e05a00;    /* orange */
+      --brand:#1f7a4f;
+      --brand2:#e05a00;
       --card:#ffffff;
       --shadow:0 18px 50px rgba(0,0,0,.18);
       --radius:10px;
       --max:1100px;
-      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg)}
-    a{color:inherit}
+    a{text-decoration:none;color:inherit}
     .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+    /* TOP BAR */
     .topbar{
-      height:68px; display:flex; align-items:center;
-      border-bottom:1px solid var(--line); background:#fff;
-      position:sticky; top:0; z-index:50;
+      height:68px;
+      display:flex;
+      align-items:center;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+      position:sticky;
+      top:0;
+      z-index:50;
     }
-    .brand{
-      display:flex; align-items:center; gap:10px; text-decoration:none;
-      font-weight:800; letter-spacing:.2px;
-    }
-    .brand img{height:34px; width:auto; display:block}
-    .brand .name{font-size:18px}
-    .brand .name span{color:var(--brand)}
-    .navspacer{flex:1}
-    .nav{
-      display:flex; gap:18px; font-size:14px; color:#374151;
-    }
-    .nav a{ text-decoration:none; opacity:.9 }
-    .nav a:hover{ opacity:1; text-decoration:underline }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand img{height:34px}
+    .brand span{color:var(--brand)}
+    .nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
+    .nav a:hover{text-decoration:underline}
 
     /* HERO */
     .hero{
-      position:relative;
-      min-height:430px;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.15) 100%),
-        url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=2400&q=80");
-      background-size:cover;
-      background-position:center;
-      overflow:hidden;
+        linear-gradient(90deg, rgba(0,0,0,.6), rgba(0,0,0,.25)),
+        url("hero.jpg") center/cover no-repeat;
+      color:#fff;
     }
     .hero .container{
       display:grid;
-      grid-template-columns: 1.25fr .85fr;
-      gap:34px;
-      padding:48px 18px 38px;
-      align-items:center;
+      grid-template-columns:1.3fr .9fr;
+      gap:32px;
+      padding:54px 18px;
     }
-    .hero h1{
-      margin:0 0 10px;
-      color:#fff;
-      font-size:40px;
-      line-height:1.08;
-      font-weight:900;
-      text-shadow:0 2px 10px rgba(0,0,0,.25);
-    }
-    .hero p{
-      margin:0 0 18px;
-      color:rgba(255,255,255,.92);
-      font-size:16px;
-      line-height:1.5;
-      max-width:680px;
-    }
+    .hero h1{font-size:42px;margin:0 0 12px}
+    .hero p{font-size:16px;max-width:620px;line-height:1.6}
+
     .value-strip{
-      margin-top:18px;
-      background:rgba(31,122,79,.92);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:12px;
-      padding:14px 14px;
+      margin-top:20px;
       display:grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:12px;
-      width:min(720px,100%);
+      background:rgba(31,122,79,.92);
+      padding:14px;
+      border-radius:12px;
+      font-size:13px;
     }
-    .value-item{
-      display:flex; align-items:center; gap:10px;
-      color:#fff; font-size:13px; line-height:1.2;
-    }
-    .value-item svg{flex:0 0 22px; opacity:.95}
 
     /* ZIP CARD */
     .zip-card{
-      background:var(--card);
-      border-radius:12px;
+      background:#fff;
+      color:#111;
+      border-radius:14px;
       box-shadow:var(--shadow);
       overflow:hidden;
-      position:relative;
     }
     .zip-card .head{
       background:var(--brand);
       color:#fff;
-      padding:14px 16px;
-      font-weight:800;
       text-align:center;
-      font-size:15px;
+      padding:14px;
+      font-weight:800;
     }
-    .zip-card .body{padding:18px 18px 18px}
-    .zip-card label{display:block;font-size:14px;font-weight:700;margin:0 0 8px;color:#111827}
+    .zip-card .body{padding:18px}
     .field{
-      display:flex; gap:10px; align-items:center;
       border:1px solid var(--line);
       border-radius:10px;
-      padding:10px 12px;
-      background:#fff;
+      padding:10px;
+      margin-bottom:12px;
     }
-    .field svg{opacity:.65}
     .field input{
-      border:0; outline:0; width:100%;
-      font-size:14px; padding:2px 0;
+      border:0;width:100%;font-size:14px;outline:none;
     }
     .btn{
-      display:inline-flex; justify-content:center; align-items:center;
-      border:0; cursor:pointer;
-      font-weight:900;
-      letter-spacing:.3px;
-      border-radius:10px;
-      padding:12px 14px;
-      text-transform:uppercase;
-      font-size:13px;
-    }
-    .btn-primary{background:var(--brand2);color:#fff;width:100%;margin-top:12px}
-    .btn-primary:hover{filter:brightness(.97)}
-    .micro{
-      margin-top:12px;
-      font-size:12px;
-      color:#6b7280;
-      line-height:1.35;
-      text-align:center;
-    }
-    .arrow{
-      position:absolute;
-      right:-18px;
-      top:58px;
-      width:64px;
-      height:64px;
-      transform:rotate(12deg);
-      opacity:.95;
-      filter:drop-shadow(0 8px 12px rgba(0,0,0,.18));
-    }
-
-    /* TRUST ROW */
-    .trust{
-      border-bottom:1px solid var(--line);
-      padding:18px 0;
-      background:#fff;
-    }
-    .trust .container{
-      display:flex;
-      gap:22px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .trust .label{
-      font-size:12px; color:#111827; font-weight:800;
-      text-transform:uppercase; letter-spacing:.6px;
-    }
-    .logos{
-      display:flex; gap:18px; flex-wrap:wrap; align-items:center; justify-content:center;
-      opacity:.75;
-    }
-    .logo-pill{
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:12px;
-      color:#111827;
-      background:#fafafa;
-    }
-
-    /* MAIN SECTION */
-    .section{padding:38px 0}
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:26px;
-      align-items:center;
-    }
-    .card{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:18px;
-      background:#fff;
-    }
-    .imgbox{
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#f3f4f6;
-    }
-    .imgbox img{display:block;width:100%;height:auto}
-    h2{margin:0 0 10px;font-size:22px}
-    .lead{color:#374151;line-height:1.6;margin:0 0 14px;font-size:14.5px}
-    .btn-ghost{
-      background:#111827;
+      display:block;
+      width:100%;
+      padding:14px;
+      background:var(--brand2);
       color:#fff;
-      padding:12px 16px;
       border-radius:10px;
       font-weight:900;
       text-transform:uppercase;
       font-size:13px;
-      display:inline-flex;
-      text-decoration:none;
+      cursor:pointer;
+      border:0;
     }
 
-    /* SEO TEXT */
-    .seo{
-      background:#fff;
-      border-top:1px solid var(--line);
-      padding:30px 0 44px;
-    }
-    .seo h3{margin:0 0 8px;font-size:18px}
-    .seo p{margin:0 0 14px;color:#374151;line-height:1.75;font-size:14px}
-    .seo .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:22px;
-    }
+    /* SECTIONS */
+    .section{padding:42px 0}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .card{border:1px solid var(--line);border-radius:14px;padding:20px}
+    .imgbox img{width:100%;border-radius:14px}
 
     /* FOOTER */
     footer{
       background:#111827;
-      color:rgba(255,255,255,.86);
-      padding:26px 0;
+      color:#fff;
+      padding:28px 0;
       font-size:13px;
     }
-    footer .container{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap}
-    .footlinks{display:flex; gap:14px; flex-wrap:wrap}
-    .footlinks a{color:rgba(255,255,255,.86); text-decoration:none}
-    .footlinks a:hover{text-decoration:underline}
 
-    /* RESPONSIVE */
-    @media (max-width: 900px){
-      .hero .container{grid-template-columns: 1fr; padding-top:30px}
-      .value-strip{grid-template-columns: 1fr 1fr}
-      .two-col{grid-template-columns: 1fr}
-      .seo .grid{grid-template-columns: 1fr}
+    @media(max-width:900px){
+      .hero .container,
+      .two-col{grid-template-columns:1fr}
+      .value-strip{grid-template-columns:1fr 1fr}
       .nav{display:none}
     }
   </style>
 </head>
 
 <body>
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="container" style="display:flex;align-items:center;gap:14px;width:100%;">
-      <a class="brand" href="#top">
-        <!-- Replace src with your transparent PNG logo -->
-        <img src="YOUR_LOGO_PNG_URL_HERE" alt="ClearFlow Home Services logo" onerror="this.style.display='none'">
-        <div class="name">ClearFlow <span>Home Services</span></div>
-      </a>
-      <div class="navspacer"></div>
-      <nav class="nav">
-        <a href="#how">How It Works</a>
-        <a href="#why">Why It Matters</a>
-        <a href="#learn">Learn</a>
-        <a href="#form">Get Matched</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="container">
-      <div>
-        <h1>Worried About Water Pooling Near Your Foundation?</h1>
-        <p>
-          Get a free drainage assessment and get matched with trusted local contractors — no pressure, no obligation.
-          Whether it’s downspouts dumping too close, soggy yards, or erosion near the home, we’ll point you in the right direction.
-        </p>
+<header class="topbar">
+  <div class="container" style="display:flex;align-items:center">
+    <a class="brand" href="#">
+      <strong>ClearFlow <span>Home Services</span></strong>
+    </a>
+    <nav class="nav">
+      <a href="#how">How It Works</a>
+      <a href="#why">Why It Matters</a>
+      <a href="#leadform">Get Help</a>
+    </nav>
+  </div>
+</header>
 
-        <div class="value-strip" aria-label="key benefits">
-          <div class="value-item">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2">
-              <path d="M20 7l-8 10-4-4" />
-            </svg>
-            <div><strong>Local Pros</strong><br><span style="opacity:.9">Vetted contractors</span></div>
-          </div>
-          <div class="value-item">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2">
-              <path d="M12 2v20M2 12h20" />
-            </svg>
-            <div><strong>Fast Match</strong><br><span style="opacity:.9">Same-week outreach</span></div>
-          </div>
-          <div class="value-item">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-            </svg>
-            <div><strong>Water Control</strong><br><span style="opacity:.9">Downspouts, grading</span></div>
-          </div>
-          <div class="value-item">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2">
-              <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/>
-            </svg>
-            <div><strong>Protect Home</strong><br><span style="opacity:.9">Prevent damage early</span></div>
-          </div>
-        </div>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div>
+      <h1>Water Pooling Around Your Home?</h1>
+      <p>
+        Standing water, soggy yards, or downspouts dumping too close to the foundation
+        can quietly cause serious damage. Get a <strong>free drainage assessment</strong>
+        and get matched with the right local contractor — fast.
+      </p>
 
-      <!-- ZIP CARD -->
-      <aside class="zip-card" id="form">
-        <div class="head">Enter ZIP Code to Get Matched Today</div>
-        <img class="arrow" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Cpath d='M18 18c24 4 38 18 42 42' fill='none' stroke='%23f59e0b' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M56 63l16 2-8-14' fill='%23f59e0b'/%3E%3C/svg%3E" />
-        <div class="body">
-          <label for="zip">What is your ZIP Code?</label>
-          <div class="field">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#111827" stroke-width="2">
-              <path d="M12 21s7-4.35 7-10a7 7 0 0 0-14 0c0 5.65 7 10 7 10z"/>
-              <circle cx="12" cy="11" r="2"/>
-            </svg>
-            <input id="zip" inputmode="numeric" maxlength="10" placeholder="ZIP Code" />
-          </div>
-
-          <button class="btn btn-primary" type="button" onclick="goToForm()">Get Free Assessment</button>
-
-          <div class="micro">
-            <strong>No spam.</strong> We only use your info to connect you with local drainage & water-management pros.
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- TRUST / LOGOS -->
-  <section class="trust" aria-label="trusted network">
-    <div class="container">
-      <div class="label">Compare options from local pros</div>
-      <div class="logos" aria-label="partner examples">
-        <!-- Replace these with real contractor names once you’ve lined them up -->
-        <div class="logo-pill">Gutter & Downspout</div>
-        <div class="logo-pill">Drainage / French Drains</div>
-        <div class="logo-pill">Grading & Excavation</div>
-        <div class="logo-pill">Landscaping</div>
-        <div class="logo-pill">Foundation Specialists</div>
+      <div class="value-strip">
+        <div>✔ Local drainage pros</div>
+        <div>✔ No pressure or obligation</div>
+        <div>✔ Downspouts, grading, drains</div>
+        <div>✔ Prevent costly damage early</div>
       </div>
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how">
-    <div class="container two-col">
-      <div class="imgbox">
-        <img
-          src="hero.jpg"
-  alt="Water drainage and foundation protection" />
-      </div>
-      <div class="card">
-        <h2>Free drainage assessment — matched to the right type of contractor</h2>
-        <p class="lead">
-          Tell us what you’re seeing (standing water, downspouts dumping too close, erosion, damp crawl spaces).
-          We’ll route your request to the best-fit local pros — so you’re not guessing who to call.
-        </p>
-        <a class="btn-ghost" href="#leadform">Get Started</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIMPLE “WHY THIS MATTERS” -->
-  <section class="section" id="why" style="padding-top:0;">
-    <div class="container">
-      <div class="card">
-        <h2 style="margin-bottom:8px;">Why this matters</h2>
-        <p class="lead" style="margin-bottom:0;">
-          Water pooling can lead to foundation cracks • Soil erosion can cause uneven settling • Moisture attracts mold and pests •
-          Problems get more expensive the longer they’re ignored.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- EMBED YOUR GOOGLE FORM -->
-  <section class="section" id="leadform" style="padding-top:0;">
-    <div class="container two-col">
-      <div class="card">
-        <h2>Schedule an estimate</h2>
-        <p class="lead">
-          We’ll use this to match you with local contractors. If you already have a preferred company, you can note it in the form.
-        </p>
-
-        <!-- OPTION A: Button opens your Google Form -->
-        <a class="btn btn-primary" style="text-decoration:none;" href="YOUR_GOOGLE_FORM_URL_HERE" target="_blank" rel="noopener">
-          Open the form
-        </a>
-
-        <p class="micro" style="margin-top:10px;">
-          Tip: You can also embed the Google Form directly below (OPTION B) using the iframe snippet from Google Forms.
-        </p>
-      </div>
-
-      <div class="card" style="padding:0;overflow:hidden;">
-        <!-- OPTION B: Embed your Google Form here
-             1) In Google Forms: Send > <> Embed HTML > copy the src URL
-             2) Replace FORM_IFRAME_SRC with that URL
-        -->
-        <iframe
-          id="formFrame"
-          title="ClearFlow Home Services - Assessment Form"
-          src="FORM_IFRAME_SRC"
-          width="100%"
-          height="560"
-          style="border:0; display:block;"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO / INFO SECTION (like the example site) -->
-  <section class="seo" id="learn">
-    <div class="container">
-      <div class="grid">
-        <div>
-          <h3>Why drainage & downspouts matter</h3>
-          <p>
-            Most water problems start simple: downspouts dumping too close to the home, negative grading, clogged outlets,
-            or soil that holds water. Over time, that moisture can work its way toward the foundation, crawl space, or basement.
-          </p>
-
-          <h3>Common signs you should get checked</h3>
-          <p>
-            Standing water after rain • Washed-out mulch or trenches near the home • Dirt pulling away from the foundation •
-            Musty crawl space smell • Water staining on foundation walls • Gutter overflow or downspout splash-back.
-          </p>
+    <!-- ZIP CARD -->
+    <aside class="zip-card">
+      <div class="head">Check Availability Near You</div>
+      <div class="body">
+        <div class="field">
+          <input id="zip" placeholder="Enter ZIP Code" inputmode="numeric">
         </div>
 
-        <div>
-          <h3>What fixes typically look like</h3>
-          <p>
-            Solutions can be as simple as extending downspouts or as involved as grading, drainage lines, catch basins,
-            or French drains. The goal is always the same: move water away from the home and control where it exits the yard.
-          </p>
+        <!-- POPUP TRIGGER -->
+        <button
+          class="btn"
+          data-tally-open="GX9WQQ"
+          data-tally-align-left="1"
+          data-tally-hide-title="1"
+          data-tally-transparent-background="1">
+          Get Free Assessment
+        </button>
 
-          <h3>Get matched without the runaround</h3>
-          <p>
-            Drainage can fall between “gutter guy,” “landscaper,” and “foundation company.” We help route you to the right
-            type of contractor based on the symptoms — so you’re not calling five places just to get pointed somewhere else.
-          </p>
-        </div>
+        <p style="font-size:12px;color:#6b7280;text-align:center;margin-top:10px">
+          No spam. Used only to connect you with local professionals.
+        </p>
       </div>
+    </aside>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="container two-col">
+    <div class="imgbox">
+      <img src="hero.jpg" alt="Drainage and foundation water management">
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div>
-        <strong>ClearFlow Home Services</strong><br/>
-        <span style="opacity:.85;">Connecting homeowners with local drainage & water-management professionals.</span>
-      </div>
-      <div class="footlinks">
-        <a href="#top">Top</a>
-        <a href="#how">How It Works</a>
-        <a href="#leadform">Get Matched</a>
-        <a href="#" onclick="alert('Add your Privacy Policy link here.'); return false;">Privacy</a>
-      </div>
+    <div class="card">
+      <h2>How it works</h2>
+      <p>
+        Tell us what you’re seeing — standing water, erosion, damp crawl spaces,
+        or overflow issues. We route your request to the right type of contractor,
+        so you’re not calling five companies just to get redirected.
+      </p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    function goToForm(){
-      const zip = document.getElementById('zip').value.trim();
-      // Basic validation (accepts 12345 or 12345-6789)
-      const ok = /^\d{5}(-\d{4})?$/.test(zip);
-      if(!ok){
-        alert("Please enter a valid ZIP code (e.g., 35966).");
-        document.getElementById('zip').focus();
-        return;
-      }
-      // If you want to pass ZIP into a Google Form prefill later, we can wire that up.
-      document.getElementById('leadform').scrollIntoView({behavior:'smooth'});
-    }
-  </script>
+<!-- EMBEDDED FORM -->
+<section class="section" id="leadform">
+  <div class="container">
+    <div class="card">
+      <h2>Request Your Free Drainage Assessment</h2>
+
+      <iframe
+        data-tally-src="https://tally.so/embed/GX9WQQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy"
+        width="100%"
+        height="500"
+        frameborder="0"
+        title="ClearFlow Home Services Form">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="card">
+      <h2>Why this matters</h2>
+      <p>
+        Poor drainage is one of the most common — and most ignored — causes of
+        foundation issues. Small problems become expensive repairs when water
+        is left unmanaged. Early fixes are simpler, cheaper, and far less disruptive.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>ClearFlow Home Services</strong><br>
+    Connecting homeowners with trusted local drainage professionals.
+  </div>
+</footer>
+
 </body>
 </html>
