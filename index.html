@@ -103,7 +103,7 @@
       max-width:740px;
     }
 
-    /* NEW: tighter benefit chips */
+    /* benefit chips */
     .benefits{
       display:flex;
       flex-wrap:wrap;
@@ -214,7 +214,7 @@
       text-align:left;
     }
 
-    /* NEW: social proof (ethical, no fake reviews) */
+    /* TRUST / SOCIAL PROOF */
     .proof{
       background:#fff;
       border-bottom:1px solid var(--line);
@@ -228,15 +228,6 @@
       justify-content:center;
       text-align:center;
     }
-    .stars{
-      display:inline-flex;
-      gap:2px;
-      align-items:center;
-      justify-content:center;
-      font-weight:950;
-      color:#111827;
-    }
-    .stars svg{width:16px;height:16px}
     .proof-pill{
       border:1px solid var(--line);
       border-radius:999px;
@@ -253,6 +244,23 @@
       font-size:12.5px;
       line-height:1.5;
       text-align:center;
+    }
+
+    /* ✅ FIX: gold filled stars */
+    .stars{
+      display:inline-flex;
+      gap:2px;
+      align-items:center;
+      justify-content:center;
+      font-weight:950;
+      color:#111827;
+    }
+    .stars .star{
+      width:16px;height:16px;
+      fill:#f5c542;          /* gold */
+      stroke:#b45309;        /* subtle outline */
+      stroke-width:.6;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,.10));
     }
 
     /* MAIN */
@@ -317,7 +325,7 @@
     .mini h4{margin:0 0 6px;font-size:15.5px}
     .mini p{margin:0;color:#374151;line-height:1.68;font-size:13.9px}
 
-    /* NEW: before/after section */
+    /* Before/After */
     .ba{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -372,6 +380,17 @@
     }
     .embedhead strong{font-size:14px}
     .embedhead span{font-size:12px;color:var(--muted)}
+
+    /* ✅ FIX: seamless embed container + good min-height */
+    .embed-body{
+      padding:12px 12px 16px;
+    }
+    .embed-body iframe{
+      width:100%;
+      display:block;
+      border:0;
+      min-height:900px; /* fallback */
+    }
 
     /* FAQ */
     .faq{padding-top:0}
@@ -432,7 +451,7 @@
     .footlinks a{color:rgba(255,255,255,.86); text-decoration:none}
     .footlinks a:hover{text-decoration:underline}
 
-    /* NEW: mobile sticky CTA */
+    /* Mobile sticky CTA */
     .sticky-cta{
       position:fixed;
       left:12px;
@@ -484,13 +503,13 @@
       .hero h1{font-size:38px}
       .ba{grid-template-columns:1fr}
       .sticky-cta{display:block;}
-      body{padding-bottom:86px;} /* room for sticky CTA */
+      body{padding-bottom:86px;}
+      .embed-body iframe{min-height:1100px;} /* better fallback on mobile */
     }
   </style>
 </head>
 
 <body>
-  <!-- TOP BAR -->
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="ClearFlow Home Services">
@@ -521,7 +540,6 @@
           A quick assessment helps you fix the <strong>right thing first</strong> — before moisture reaches the foundation.
         </p>
 
-        <!-- NEW: short, punchy benefits -->
         <ul class="benefits" aria-label="Key benefits">
           <li>
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/></svg>
@@ -576,7 +594,7 @@
             data-tally-open="Gx9WQQ"
             data-tally-emoji-text="👋"
             data-tally-emoji-animation="wave"
-            onclick="return openTallyWithZip();">
+            onclick="return openTallyWithZip(true);">
             Check Availability
           </button>
 
@@ -594,17 +612,17 @@
     </div>
   </section>
 
-  <!-- NEW: TRUST / SOCIAL PROOF (ETHICAL) -->
+  <!-- TRUST / SOCIAL PROOF -->
   <section class="proof" id="proof" aria-label="trust signals">
     <div class="container">
       <div class="row">
         <div class="proof-pill">
           <span class="stars" aria-label="star rating">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
             &nbsp;4.8/5 average homeowner satisfaction
           </span>
         </div>
@@ -617,7 +635,7 @@
     </div>
   </section>
 
-  <!-- TRUST (your category pills still good) -->
+  <!-- category pills -->
   <section class="proof" aria-label="service categories">
     <div class="container">
       <div class="row">
@@ -653,7 +671,8 @@
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
           <button class="btn btn-dark" type="button"
-            data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+            data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+            onclick="return openTallyWithZip(true);">
             Check Availability
           </button>
 
@@ -665,7 +684,7 @@
     </div>
   </section>
 
-  <!-- NEW: BEFORE / AFTER VISUAL PROOF -->
+  <!-- BEFORE / AFTER -->
   <section class="section" id="beforeafter">
     <div class="container two-col">
       <div class="card">
@@ -755,28 +774,6 @@
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="section" id="finalcta">
-    <div class="container two-col">
-      <div class="card">
-        <h2>Get a clear next step — before the next storm</h2>
-        <p class="lead">
-          Drainage problems rarely fix themselves. The longer water sits near your home, the more likely you’ll see
-          soil movement, erosion, moisture intrusion, and foundation stress. A quick assessment now can prevent
-          thousands in future repairs.
-        </p>
-        <button class="btn btn-dark" type="button"
-          data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
-          onclick="return openTallyWithZip(true);">
-          Check Availability
-        </button>
-      </div>
-      <div class="imgbox">
-        <img src="Pic4.jpg" alt="Professional drainage solution protecting a home" />
-      </div>
-    </div>
-  </section>
-
   <!-- FORM EMBED -->
   <section class="section tight" id="formembed">
     <div class="container two-col">
@@ -799,12 +796,18 @@
           </div>
         </div>
 
-        <div style="padding:12px 12px 16px;">
+        <div class="embed-body">
           <iframe
             id="tallyFrame"
             data-tally-src="https://tally.so/embed/Gx9WQQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy" width="100%" height="625" frameborder="0" marginheight="0" marginwidth="0"
-            title="Get matched with a local pro"></iframe>
+            loading="lazy"
+            width="100%"
+            height="900"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Get matched with a local pro">
+          </iframe>
         </div>
       </div>
     </div>
@@ -871,42 +874,6 @@
     </div>
   </section>
 
-  <!-- SEO -->
-  <section class="seo" id="learn">
-    <div class="container">
-      <div class="grid">
-        <div>
-          <h3>Common causes of water pooling around a home</h3>
-          <p>
-            Most drainage problems start with one of three things: <strong>downspouts dumping too close</strong>,
-            <strong>grading that slopes toward the house</strong>, or <strong>low spots that hold water</strong>.
-            Over time, that moisture can move into crawl spaces and along foundation walls.
-          </p>
-
-          <h3>Signs you should address soon</h3>
-          <p>
-            Standing water after rain, erosion trenches, mulch washout, soil pulling away from the foundation,
-            musty crawl space odor, or water staining on foundation walls are all signs it’s time to get assessed.
-          </p>
-        </div>
-
-        <div>
-          <h3>Drainage solutions depend on the cause</h3>
-          <p>
-            Fixes can include downspout extensions, buried drains, regrading, catch basins, yard drains, or French drains.
-            The best solution depends on where water originates and how it moves across your yard.
-          </p>
-
-          <h3>Why matching matters</h3>
-          <p>
-            Drainage can fall between “gutter company,” “landscaper,” and “foundation specialist.”
-            We help route you to the right category based on symptoms so you can book faster and avoid the runaround.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <div class="container">
       <div>
@@ -928,7 +895,10 @@
   <div class="sticky-cta" aria-label="Sticky call to action">
     <div class="inner">
       <span>Standing water or erosion?<br/>Get matched fast.</span>
-      <button type="button" data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+      <button type="button"
+        data-tally-open="Gx9WQQ"
+        data-tally-emoji-text="👋"
+        data-tally-emoji-animation="wave"
         onclick="return openTallyWithZip(true);">
         Check Availability
       </button>
@@ -940,15 +910,13 @@
       return /^\d{5}(-\d{4})?$/.test(zip);
     }
 
-    // Optional: pass ZIP into the embedded form by appending it to the iframe src as a query param.
-    // For this to actually prefill a field, your Tally form needs a hidden field that reads from query params.
+    // Optional: append ZIP to the embedded form URL (requires Tally field configured to read it)
     function setFormZip(zip){
       const frame = document.getElementById('tallyFrame');
       if(!frame) return;
       const base = frame.getAttribute('data-tally-src') || frame.getAttribute('src');
       if(!base) return;
 
-      // Preserve existing params; add zip param
       try{
         const u = new URL(base, window.location.href);
         if(zip) u.searchParams.set("zip", zip);
@@ -967,10 +935,7 @@
         return false;
       }
 
-      // Store ZIP (for later use)
       try { localStorage.setItem("cf_zip", zip); } catch(e){}
-
-      // If you want to prefill the embedded form later
       setFormZip(zip);
 
       if(alsoScroll){
@@ -979,10 +944,10 @@
           if(target) target.scrollIntoView({behavior:'smooth'});
         }, 250);
       }
-      return true;
+      return true; // allow Tally popup
     }
 
-    // Load saved ZIP back into field (small UX win)
+    // Load saved ZIP back into field
     (function(){
       try{
         const saved = localStorage.getItem("cf_zip");
@@ -991,12 +956,18 @@
       }catch(e){}
     })();
 
-    // Ensure Tally embeds load reliably even if widget loads late
+    // Ensure Tally embeds load reliably (and lock in dynamicHeight)
     (function(){
       var d=document,w="https://tally.so/widgets/embed.js";
       function v(){
         if(typeof Tally!=="undefined" && Tally.loadEmbeds){
           Tally.loadEmbeds();
+
+          // ✅ second pass helps dynamicHeight “settle” so it feels seamless
+          setTimeout(() => {
+            try { Tally.loadEmbeds(); } catch(e){}
+          }, 1200);
+
         } else {
           d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
             e.src=e.dataset.tallySrc;
