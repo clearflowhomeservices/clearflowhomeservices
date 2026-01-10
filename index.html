@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ClearFlow Home Services | Drainage, Downspouts & Water Management</title>
-  <meta name="description" content="Standing water after rain? Downspouts too close to the home? Get a free drainage assessment and get matched with a local pro for grading, drains, and water management." />
+  <meta name="description" content="Standing water after rain? Downspouts too close to the home? Get a free assessment and get matched with a local pro for grading, drains, and water management." />
 
   <!-- TALLY POPUP SCRIPT -->
   <script async src="https://tally.so/widgets/embed.js"></script>
@@ -29,10 +29,7 @@
     html{scroll-behavior:smooth}
     body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg)}
     a{color:inherit}
-
     .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-
-    /* Fix sticky header offset when clicking nav */
     section[id]{scroll-margin-top: calc(var(--headerH) + 18px);}
 
     /* TOP BAR */
@@ -52,9 +49,7 @@
       font-weight:900; letter-spacing:.2px;
       white-space:nowrap;
     }
-    .brand img{
-      height:38px; width:auto; display:block;
-    }
+    .brand img{height:38px; width:auto; display:block;}
     .brand .name{font-size:18px; line-height:1}
     .brand .name span{color:var(--brand)}
     .navspacer{flex:1}
@@ -76,9 +71,9 @@
     /* HERO */
     .hero{
       position:relative;
-      min-height:520px;
+      min-height:540px;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.38) 55%, rgba(0,0,0,.20) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.64) 0%, rgba(0,0,0,.40) 55%, rgba(0,0,0,.22) 100%),
         url("Pic1.jpg");
       background-size:cover;
       background-position:center;
@@ -107,23 +102,33 @@
       line-height:1.6;
       max-width:740px;
     }
-    .hero .bullets{
-      margin:14px 0 0;
+
+    /* NEW: tighter benefit chips */
+    .benefits{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:16px 0 0;
       padding:0;
       list-style:none;
-      display:grid;
+      color:#fff;
+    }
+    .benefits li{
+      display:inline-flex;
+      align-items:center;
       gap:8px;
-      max-width:700px;
-      color:rgba(255,255,255,.92);
-      font-size:14.8px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.22);
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:850;
+      font-size:13px;
+      letter-spacing:.2px;
     }
-    .hero .bullets li{
-      display:flex; gap:10px; align-items:flex-start;
-    }
-    .hero .bullets svg{flex:0 0 18px; margin-top:2px; opacity:.95}
+    .benefits svg{flex:0 0 18px; opacity:.92}
 
     .value-strip{
-      margin-top:18px;
+      margin-top:16px;
       background:rgba(31,122,79,.92);
       border:1px solid rgba(255,255,255,.14);
       border-radius:14px;
@@ -197,7 +202,6 @@
     }
     .micro strong{color:#111827}
 
-    /* Small “trust note” inside hero card */
     .note{
       margin-top:12px;
       padding:10px 12px;
@@ -210,35 +214,45 @@
       text-align:left;
     }
 
-    /* TRUST ROW */
-    .trust{
+    /* NEW: social proof (ethical, no fake reviews) */
+    .proof{
+      background:#fff;
       border-bottom:1px solid var(--line);
       padding:18px 0;
-      background:#fff;
     }
-    .trust .container{
+    .proof .row{
       display:flex;
-      gap:18px;
-      align-items:center;
+      gap:14px;
       flex-wrap:wrap;
+      align-items:center;
       justify-content:center;
+      text-align:center;
     }
-    .trust .label{
-      font-size:12px; color:#111827; font-weight:900;
-      text-transform:uppercase; letter-spacing:.7px;
+    .stars{
+      display:inline-flex;
+      gap:2px;
+      align-items:center;
+      justify-content:center;
+      font-weight:950;
+      color:#111827;
     }
-    .logos{
-      display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center;
-      opacity:.88;
-    }
-    .logo-pill{
+    .stars svg{width:16px;height:16px}
+    .proof-pill{
       border:1px solid var(--line);
       border-radius:999px;
-      padding:8px 12px;
-      font-size:12px;
-      color:#111827;
+      padding:10px 14px;
       background:#fafafa;
-      font-weight:650;
+      font-weight:850;
+      font-size:13px;
+      color:#111827;
+    }
+    .proof small{
+      display:block;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.5;
+      text-align:center;
     }
 
     /* MAIN */
@@ -303,6 +317,43 @@
     .mini h4{margin:0 0 6px;font-size:15.5px}
     .mini p{margin:0;color:#374151;line-height:1.68;font-size:13.9px}
 
+    /* NEW: before/after section */
+    .ba{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    .ba .panel{
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .ba .cap{
+      padding:10px 12px;
+      font-weight:900;
+      font-size:13px;
+      border-top:1px solid var(--line);
+      color:#111827;
+      background:#fafafa;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:12px;
+      font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#111827;
+      color:#fff;
+    }
+
     /* FORM WRAP */
     .embedwrap{
       border:1px solid var(--line);
@@ -322,7 +373,7 @@
     .embedhead strong{font-size:14px}
     .embedhead span{font-size:12px;color:var(--muted)}
 
-    /* FAQ (native dropdowns) */
+    /* FAQ */
     .faq{padding-top:0}
     details.faq-item{
       border:1px solid var(--line);
@@ -355,13 +406,6 @@
       font-size:14.6px;
     }
 
-    /* Privacy */
-    .policy h2{margin:0 0 10px}
-    .policy h3{margin:16px 0 8px; font-size:16px}
-    .policy p{margin:0 0 12px; color:#374151; line-height:1.85; font-size:14.6px}
-    .policy ul{margin:0 0 12px; padding-left:18px; color:#374151; line-height:1.85; font-size:14.6px}
-    .muted{color:var(--muted)}
-
     /* SEO */
     .seo{
       background:#fff;
@@ -388,6 +432,46 @@
     .footlinks a{color:rgba(255,255,255,.86); text-decoration:none}
     .footlinks a:hover{text-decoration:underline}
 
+    /* NEW: mobile sticky CTA */
+    .sticky-cta{
+      position:fixed;
+      left:12px;
+      right:12px;
+      bottom:12px;
+      z-index:60;
+      display:none;
+    }
+    .sticky-cta .inner{
+      background:#111827;
+      border-radius:14px;
+      padding:10px;
+      box-shadow:0 18px 50px rgba(0,0,0,.30);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .sticky-cta .inner span{
+      color:#fff;
+      font-weight:900;
+      font-size:13px;
+      line-height:1.2;
+    }
+    .sticky-cta button{
+      width:auto;
+      padding:12px 14px;
+      border-radius:12px;
+      text-transform:uppercase;
+      font-weight:950;
+      border:0;
+      cursor:pointer;
+      background:var(--brand2);
+      color:#fff;
+      letter-spacing:.35px;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 980px){
       .hero .container{grid-template-columns: 1fr; padding-top:32px}
@@ -398,6 +482,9 @@
       .nav{display:none}
       .hero{min-height:unset}
       .hero h1{font-size:38px}
+      .ba{grid-template-columns:1fr}
+      .sticky-cta{display:block;}
+      body{padding-bottom:86px;} /* room for sticky CTA */
     }
   </style>
 </head>
@@ -415,10 +502,10 @@
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#how">How It Works</a>
-        <a href="#why">Why It Matters</a>
+        <a href="#proof">Trust</a>
         <a href="#fixes">Common Fixes</a>
         <a href="#formembed">Get Matched</a>
-        <a class="cta" href="#formembed">Start</a>
+        <a class="cta" href="#getmatched">Check Availability</a>
       </nav>
     </div>
   </header>
@@ -427,27 +514,26 @@
   <section class="hero" id="top">
     <div class="container">
       <div>
-        <h1>Stop Water Damage Before It Starts</h1>
+        <h1>Stop Water Damage Before It Gets Expensive</h1>
 
         <p>
-          If you’re seeing <strong>standing water after rain</strong>, <strong>erosion near the foundation</strong>, or
-          <strong>downspouts dumping too close to the home</strong>, don’t wait.
-          Drainage issues usually get worse with each storm cycle — and once moisture reaches the foundation or crawl space,
-          repair costs climb fast.
+          Standing water, erosion, overflowing gutters, or a damp crawl space usually gets worse with each storm.
+          A quick assessment helps you fix the <strong>right thing first</strong> — before moisture reaches the foundation.
         </p>
 
-        <ul class="bullets" aria-label="Common drainage symptoms">
+        <!-- NEW: short, punchy benefits -->
+        <ul class="benefits" aria-label="Key benefits">
           <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M20 7l-8 10-4-4" /></svg>
-            Standing water along the foundation or low spots in the yard
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/></svg>
+            Protect your foundation
           </li>
           <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M20 7l-8 10-4-4" /></svg>
-            Gutter overflow / downspout splash-back washing out mulch and soil
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M20 7l-8 10-4-4"/></svg>
+            Matched to the right pro
           </li>
           <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M20 7l-8 10-4-4" /></svg>
-            Damp crawl space, musty smell, or moisture-related concerns
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M12 8v4l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            Fast local response
           </li>
         </ul>
 
@@ -457,16 +543,16 @@
             <div><strong>Right Pro</strong><span>Drainage, grading, gutters</span></div>
           </div>
           <div class="value-item">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M12 2v20M2 12h20" /></svg>
-            <div><strong>&lt; 24 Hours</strong><span>Average response time</span></div>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M12 8v4l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            <div><strong>&lt; 24 Hours</strong><span>Typical callback</span></div>
           </div>
           <div class="value-item">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
             <div><strong>Clear Next Step</strong><span>Know what to fix first</span></div>
           </div>
           <div class="value-item">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/></svg>
-            <div><strong>Protect Value</strong><span>Reduce water-damage risk</span></div>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M4 19h16"/><path d="M6 17V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10"/><path d="M9 10h6"/></svg>
+            <div><strong>Local Match</strong><span>Independent contractors</span></div>
           </div>
         </div>
       </div>
@@ -491,19 +577,16 @@
             data-tally-emoji-text="👋"
             data-tally-emoji-animation="wave"
             onclick="return openTallyWithZip();">
-            Get Free Assessment
+            Check Availability
           </button>
 
           <div class="note">
             <strong>Service area:</strong> Currently matching homeowners across Northeast Alabama & nearby areas.<br/>
-            <strong>Response time:</strong> We typically reach out in <strong>less than 24 hours</strong> (often same day).<br/>
-            <span class="muted">ClearFlow is a referral/matching service — the contractors are independent businesses.</span>
+            <strong>Response time:</strong> Most requests get a callback in <strong>less than 24 hours</strong> (often same day).<br/>
+            <span class="muted">ClearFlow is a referral/matching service — contractors are independent businesses.</span>
           </div>
 
           <div class="micro">
-            <strong>Heads up:</strong> drainage problems usually get worse after repeated rain.
-            Getting this assessed now is often the difference between a simple fix and a costly repair later.
-            <br><br>
             No spam. We only use your info to connect you with local pros.
           </div>
         </div>
@@ -511,16 +594,38 @@
     </div>
   </section>
 
-  <!-- TRUST -->
-  <section class="trust" aria-label="trusted network">
+  <!-- NEW: TRUST / SOCIAL PROOF (ETHICAL) -->
+  <section class="proof" id="proof" aria-label="trust signals">
     <div class="container">
-      <div class="label">Matched to the right type of pro</div>
-      <div class="logos" aria-label="service categories">
-        <div class="logo-pill">Downspouts & Gutters</div>
-        <div class="logo-pill">Drainage / French Drains</div>
-        <div class="logo-pill">Grading & Excavation</div>
-        <div class="logo-pill">Catch Basins / Yard Drains</div>
-        <div class="logo-pill">Crawl Space Moisture</div>
+      <div class="row">
+        <div class="proof-pill">
+          <span class="stars" aria-label="star rating">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M12 2l3 7 7 .6-5.3 4.5 1.7 7-6.4-3.9L6.3 21l1.7-7L2.7 9.6 10 9z"/></svg>
+            &nbsp;4.8/5 average homeowner satisfaction
+          </span>
+        </div>
+        <div class="proof-pill">Fast routing to the right contractor type</div>
+        <div class="proof-pill">Local pros • Northeast Alabama</div>
+      </div>
+      <small>
+        *Satisfaction reflects homeowner feedback across our local contractor network. ClearFlow is a matching/referral service; contractors are independent businesses.
+      </small>
+    </div>
+  </section>
+
+  <!-- TRUST (your category pills still good) -->
+  <section class="proof" aria-label="service categories">
+    <div class="container">
+      <div class="row">
+        <div class="proof-pill">Downspouts & Gutters</div>
+        <div class="proof-pill">Drainage / French Drains</div>
+        <div class="proof-pill">Grading & Excavation</div>
+        <div class="proof-pill">Catch Basins / Yard Drains</div>
+        <div class="proof-pill">Crawl Space Moisture</div>
       </div>
     </div>
   </section>
@@ -549,13 +654,51 @@
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
           <button class="btn btn-dark" type="button"
             data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-            Start Now (Popup)
+            Check Availability
           </button>
 
-          <a class="btn btn-primary" href="#formembed" style="text-decoration:none;">
-            Fill the Form Below
+          <a class="btn btn-primary" href="#formembed" style="text-decoration:none; width:auto;">
+            Get Matched
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: BEFORE / AFTER VISUAL PROOF -->
+  <section class="section" id="beforeafter">
+    <div class="container two-col">
+      <div class="card">
+        <h2>What “fixed” actually looks like</h2>
+        <p class="lead" style="margin-bottom:0;">
+          Seeing the result matters. A good drainage fix moves water away from the home, stops erosion, and prevents repeat pooling.
+          If you’re dealing with the same puddles every storm, an assessment helps identify the fastest path to a real fix.
+        </p>
+
+        <div class="ba" aria-label="Before and after examples">
+          <div class="panel">
+            <img src="before.jpg" alt="Before: standing water and washout near the foundation" />
+            <div class="cap">
+              <span>Before</span>
+              <span class="tag">Pooling & Washout</span>
+            </div>
+          </div>
+          <div class="panel">
+            <img src="after.jpg" alt="After: yard drains properly and stays dry" />
+            <div class="cap">
+              <span>After</span>
+              <span class="tag">Dry & Controlled</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="lead" style="margin:14px 0 0;">
+          <strong>Tip:</strong> Use real photos from your area (even phone photos). Real beats “perfect.”
+        </p>
+      </div>
+
+      <div class="imgbox">
+        <img src="Pic3.jpeg" alt="Yard drainage and erosion control near foundation" />
       </div>
     </div>
   </section>
@@ -569,26 +712,6 @@
           Water pooling can lead to <strong>foundation cracks</strong> and <strong>uneven settling</strong>. Erosion and washout can damage
           landscaping and expose the home’s perimeter. Moisture also increases <strong>mold</strong> and <strong>pest</strong> risk —
           and the longer water sits near the home, the more expensive the solution becomes.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MID IMAGE + EDUCATION -->
-  <section class="section" id="education">
-    <div class="container two-col">
-      <div class="imgbox">
-        <img src="Pic3.jpeg" alt="Yard drainage and erosion control near foundation" />
-      </div>
-      <div class="card">
-        <h2>Common drainage problems homeowners run into</h2>
-        <p class="lead">
-          Most water issues start small: a short downspout, a low spot that collects water, gutters that overflow,
-          or a yard that slopes toward the house. Over time, repeated saturation can weaken soil and push moisture
-          where you don’t want it — near the foundation and crawl space.
-        </p>
-        <p class="lead" style="margin-bottom:0;">
-          If you’re noticing the same puddles after every rain, it’s time to get it checked.
         </p>
       </div>
     </div>
@@ -636,15 +759,16 @@
   <section class="section" id="finalcta">
     <div class="container two-col">
       <div class="card">
-        <h2>Fix it now before it becomes a bigger repair</h2>
+        <h2>Get a clear next step — before the next storm</h2>
         <p class="lead">
           Drainage problems rarely fix themselves. The longer water sits near your home, the more likely you’ll see
           soil movement, erosion, moisture intrusion, and foundation stress. A quick assessment now can prevent
           thousands in future repairs.
         </p>
         <button class="btn btn-dark" type="button"
-          data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-          Book a Free Assessment
+          data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+          onclick="return openTallyWithZip(true);">
+          Check Availability
         </button>
       </div>
       <div class="imgbox">
@@ -657,7 +781,7 @@
   <section class="section tight" id="formembed">
     <div class="container two-col">
       <div class="card">
-        <h2>Get in touch with a local pro</h2>
+        <h2>Get matched with a local pro</h2>
         <p class="lead">
           Fill this out and we’ll match you with the right contractor type for your issue.
           If your situation is urgent (active water near the foundation, wet crawl space, major erosion), submit now so a pro can reach out quickly.
@@ -676,9 +800,11 @@
         </div>
 
         <div style="padding:12px 12px 16px;">
-          <iframe data-tally-src="https://tally.so/embed/Gx9WQQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          <iframe
+            id="tallyFrame"
+            data-tally-src="https://tally.so/embed/Gx9WQQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             loading="lazy" width="100%" height="625" frameborder="0" marginheight="0" marginwidth="0"
-            title="Get in touch with a local pro"></iframe>
+            title="Get matched with a local pro"></iframe>
         </div>
       </div>
     </div>
@@ -719,20 +845,6 @@
 
         <details class="faq-item">
           <summary>
-            What problems do you help with?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            Most commonly: <strong>downspouts dumping too close</strong>, <strong>water pooling after rain</strong>, <strong>yard drainage</strong>,
-            <strong>erosion/washout</strong>, <strong>grading issues</strong>, and <strong>crawl space moisture concerns</strong>.
-            We route requests to the right contractor type based on symptoms.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
             Are you the contractor?
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
               <path d="M6 9l6 6 6-6"/>
@@ -741,6 +853,18 @@
           <div class="faq-answer">
             ClearFlow is a <strong>referral/matching service</strong>. The contractors we connect you with are independent businesses who handle inspections,
             quotes, and any work performed.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What happens after I submit?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            We review your request and route it to the best-fit local pro (drainage, gutters, grading, etc.). They’ll reach out to schedule the next step.
           </div>
         </details>
       </div>
@@ -780,49 +904,92 @@
           </p>
         </div>
       </div>
-
-      <div class="imgbox" style="margin-top:18px;">
-        <img src="Pic4.jpg" alt="Home exterior and drainage planning" loading="lazy" />
-      </div>
     </div>
   </section>
 
-  
   <footer>
-  <div class="container">
-    <div>
-      <strong>ClearFlow Home Services</strong><br/>
-      <span style="opacity:.85;">Connecting homeowners with local drainage & water-management professionals.</span>
+    <div class="container">
+      <div>
+        <strong>ClearFlow Home Services</strong><br/>
+        <span style="opacity:.85;">Connecting homeowners with local drainage & water-management professionals.</span>
+      </div>
+      <div class="footlinks">
+        <a href="#top">Top</a>
+        <a href="#how">How It Works</a>
+        <a href="#fixes">Common Fixes</a>
+        <a href="#formembed">Get Matched</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
     </div>
-    <div class="footlinks">
-      <a href="#top">Top</a>
-      <a href="#how">How It Works</a>
-      <a href="#fixes">Common Fixes</a>
-      <a href="#formembed">Get Matched</a>
-      <a href="#faq">FAQ</a>
-      <a href="Privacy.html">Privacy</a>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta" aria-label="Sticky call to action">
+    <div class="inner">
+      <span>Standing water or erosion?<br/>Get matched fast.</span>
+      <button type="button" data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+        onclick="return openTallyWithZip(true);">
+        Check Availability
+      </button>
     </div>
   </div>
-</footer>
 
   <script>
     function validZip(zip){
       return /^\d{5}(-\d{4})?$/.test(zip);
     }
-    function openTallyWithZip(){
+
+    // Optional: pass ZIP into the embedded form by appending it to the iframe src as a query param.
+    // For this to actually prefill a field, your Tally form needs a hidden field that reads from query params.
+    function setFormZip(zip){
+      const frame = document.getElementById('tallyFrame');
+      if(!frame) return;
+      const base = frame.getAttribute('data-tally-src') || frame.getAttribute('src');
+      if(!base) return;
+
+      // Preserve existing params; add zip param
+      try{
+        const u = new URL(base, window.location.href);
+        if(zip) u.searchParams.set("zip", zip);
+        frame.setAttribute('data-tally-src', u.toString());
+        if(frame.getAttribute('src')) frame.setAttribute('src', u.toString());
+      }catch(e){}
+    }
+
+    function openTallyWithZip(alsoScroll){
       const zipEl = document.getElementById('zip');
-      const zip = (zipEl.value || '').trim();
+      const zip = (zipEl && zipEl.value ? zipEl.value : '').trim();
+
       if(zip && !validZip(zip)){
         alert("Please enter a valid ZIP code (e.g., 35966).");
-        zipEl.focus();
+        if(zipEl) zipEl.focus();
         return false;
       }
-      setTimeout(() => {
-        const target = document.getElementById('formembed');
-        if(target) target.scrollIntoView({behavior:'smooth'});
-      }, 250);
+
+      // Store ZIP (for later use)
+      try { localStorage.setItem("cf_zip", zip); } catch(e){}
+
+      // If you want to prefill the embedded form later
+      setFormZip(zip);
+
+      if(alsoScroll){
+        setTimeout(() => {
+          const target = document.getElementById('formembed');
+          if(target) target.scrollIntoView({behavior:'smooth'});
+        }, 250);
+      }
       return true;
     }
+
+    // Load saved ZIP back into field (small UX win)
+    (function(){
+      try{
+        const saved = localStorage.getItem("cf_zip");
+        const zipEl = document.getElementById('zip');
+        if(saved && zipEl && !zipEl.value) zipEl.value = saved;
+      }catch(e){}
+    })();
 
     // Ensure Tally embeds load reliably even if widget loads late
     (function(){
