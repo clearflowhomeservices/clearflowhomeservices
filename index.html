@@ -246,7 +246,7 @@
       text-align:center;
     }
 
-    /* ✅ FIX: gold filled stars */
+    /* gold filled stars */
     .stars{
       display:inline-flex;
       gap:2px;
@@ -257,8 +257,8 @@
     }
     .stars .star{
       width:16px;height:16px;
-      fill:#f5c542;          /* gold */
-      stroke:#b45309;        /* subtle outline */
+      fill:#f5c542;
+      stroke:#b45309;
       stroke-width:.6;
       filter: drop-shadow(0 1px 0 rgba(0,0,0,.10));
     }
@@ -266,6 +266,7 @@
     /* MAIN */
     .section{padding:46px 0}
     .section.tight{padding-top:0}
+
     .two-col{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -325,41 +326,103 @@
     .mini h4{margin:0 0 6px;font-size:15.5px}
     .mini p{margin:0;color:#374151;line-height:1.68;font-size:13.9px}
 
-    /* Before/After */
-    .ba{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      margin-top:14px;
-    }
-    .ba .panel{
+    /* BEFORE/AFTER - single image, pro captions */
+    .ba-wrap{
       border:1px solid var(--line);
       border-radius:16px;
       overflow:hidden;
       background:#fff;
+      margin-top:14px;
     }
-    .ba .cap{
-      padding:10px 12px;
-      font-weight:900;
-      font-size:13px;
-      border-top:1px solid var(--line);
-      color:#111827;
-      background:#fafafa;
+    .ba-wrap img{
+      width:100%;
+      display:block;
+      height:auto;
+    }
+    .ba-caption{
       display:flex;
-      justify-content:space-between;
+      flex-wrap:wrap;
       gap:10px;
       align-items:center;
+      justify-content:space-between;
+      padding:12px 14px;
+      border-top:1px solid var(--line);
+      background:#fafafa;
+      font-size:13px;
+      color:#111827;
     }
-    .tag{
+    .ba-caption strong{font-weight:950}
+    .badge{
       display:inline-flex;
       align-items:center;
-      gap:6px;
-      font-size:12px;
-      font-weight:900;
-      padding:6px 10px;
+      gap:8px;
+      padding:8px 10px;
       border-radius:999px;
       background:#111827;
       color:#fff;
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    /* Testimonials */
+    .testimonials{
+      background:#fff;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:44px 0;
+    }
+    .t-head{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:flex-end;
+      justify-content:space-between;
+      margin-bottom:16px;
+    }
+    .t-head h2{margin:0;font-size:24px;letter-spacing:-.2px}
+    .t-head p{margin:0;color:#374151;line-height:1.7;max-width:760px;font-size:14.8px}
+    .t-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .t-card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+    .t-card .quote{
+      margin:0;
+      color:#111827;
+      line-height:1.75;
+      font-size:14.6px;
+    }
+    .t-meta{
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      color:#374151;
+      font-size:12.8px;
+    }
+    .t-name{font-weight:900;color:#111827}
+    .t-loc{color:#6b7280}
+    .t-stars{
+      display:inline-flex;
+      gap:2px;
+      align-items:center;
+    }
+    .t-stars svg{
+      width:14px;height:14px;
+      fill:#f5c542;
+      stroke:#b45309;
+      stroke-width:.6;
     }
 
     /* FORM WRAP */
@@ -381,7 +444,7 @@
     .embedhead strong{font-size:14px}
     .embedhead span{font-size:12px;color:var(--muted)}
 
-    /* ✅ FIX: seamless embed container + good min-height */
+    /* ✅ UPDATED: shorter form height */
     .embed-body{
       padding:12px 12px 16px;
     }
@@ -389,7 +452,7 @@
       width:100%;
       display:block;
       border:0;
-      min-height:900px; /* fallback */
+      min-height:640px; /* shorter now */
     }
 
     /* FAQ */
@@ -423,20 +486,6 @@
       color:#374151;
       line-height:1.75;
       font-size:14.6px;
-    }
-
-    /* SEO */
-    .seo{
-      background:#fff;
-      border-top:1px solid var(--line);
-      padding:36px 0 56px;
-    }
-    .seo h3{margin:0 0 8px;font-size:18px}
-    .seo p{margin:0 0 14px;color:#374151;line-height:1.85;font-size:14.7px}
-    .seo .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:22px;
     }
 
     /* FOOTER */
@@ -496,15 +545,14 @@
       .hero .container{grid-template-columns: 1fr; padding-top:32px}
       .value-strip{grid-template-columns: 1fr 1fr}
       .two-col{grid-template-columns: 1fr}
-      .seo .grid{grid-template-columns: 1fr}
       .grid3{grid-template-columns: 1fr}
+      .t-grid{grid-template-columns: 1fr}
       .nav{display:none}
       .hero{min-height:unset}
       .hero h1{font-size:38px}
-      .ba{grid-template-columns:1fr}
       .sticky-cta{display:block;}
       body{padding-bottom:86px;}
-      .embed-body iframe{min-height:1100px;} /* better fallback on mobile */
+      .embed-body iframe{min-height:760px;} /* some Tally layouts still taller on mobile */
     }
   </style>
 </head>
@@ -522,8 +570,8 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="#how">How It Works</a>
         <a href="#proof">Trust</a>
-        <a href="#fixes">Common Fixes</a>
-        <a href="#formembed">Get Matched</a>
+        <a href="#beforeafter">Before/After</a>
+        <a href="#formembed">Check Availability</a>
         <a class="cta" href="#getmatched">Check Availability</a>
       </nav>
     </div>
@@ -675,49 +723,106 @@
             onclick="return openTallyWithZip(true);">
             Check Availability
           </button>
-
-          <a class="btn btn-primary" href="#formembed" style="text-decoration:none; width:auto;">
-            Get Matched
-          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BEFORE / AFTER -->
+  <!-- BEFORE / AFTER (clean + centered, no awkward side image) -->
   <section class="section" id="beforeafter">
-    <div class="container two-col">
+    <div class="container">
       <div class="card">
         <h2>What “fixed” actually looks like</h2>
         <p class="lead" style="margin-bottom:0;">
-          Seeing the result matters. A good drainage fix moves water away from the home, stops erosion, and prevents repeat pooling.
-          If you’re dealing with the same puddles every storm, an assessment helps identify the fastest path to a real fix.
+          This is what homeowners want: water redirected away from the foundation, erosion stopped, and the yard staying dry after storms.
+          If you’re seeing the same pooling every rain, a quick assessment helps identify what to fix first.
         </p>
 
-        <div class="ba" aria-label="Before and after examples">
-          <div class="panel">
-            <img src="before.jpg" alt="Before: standing water and washout near the foundation" />
-            <div class="cap">
-              <span>Before</span>
-              <span class="tag">Pooling & Washout</span>
-            </div>
-          </div>
-          <div class="panel">
-            <img src="after.jpg" alt="After: yard drains properly and stays dry" />
-            <div class="cap">
-              <span>After</span>
-              <span class="tag">Dry & Controlled</span>
-            </div>
+        <div class="ba-wrap" aria-label="Before and after photo">
+          <img
+            src="foundation-drainage-before-after.jpg"
+            alt="Before and after: water pooling against foundation vs. controlled drainage after installation"
+            loading="lazy">
+          <div class="ba-caption">
+            <div><strong>Before:</strong> Water pooling against the foundation after storms</div>
+            <div class="badge"><span>After:</span> Drainage installed to redirect water away</div>
           </div>
         </div>
 
-        <p class="lead" style="margin:14px 0 0;">
-          <strong>Tip:</strong> Use real photos from your area (even phone photos). Real beats “perfect.”
-        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+          <button class="btn btn-dark" type="button"
+            data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+            onclick="return openTallyWithZip(true);">
+            Check Availability
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials" aria-label="homeowner testimonials">
+    <div class="container">
+      <div class="t-head">
+        <div>
+          <h2>Homeowners don’t want “a quote.” They want peace of mind.</h2>
+          <p>
+            A drainage issue is stressful — because you don’t know what’s actually causing it.
+            Our job is to route you to the right type of pro fast, so you stop guessing.
+          </p>
+        </div>
       </div>
 
-      <div class="imgbox">
-        <img src="Pic3.jpeg" alt="Yard drainage and erosion control near foundation" />
+      <div class="t-grid">
+        <div class="t-card">
+          <p class="quote">“We had water sitting by the foundation every time it rained. ClearFlow got us connected fast and the contractor explained what was actually happening. The fix made an immediate difference.”</p>
+          <div class="t-meta">
+            <span><span class="t-name">Sarah M.</span> <span class="t-loc">• Fort Payne, AL</span></span>
+            <span class="t-stars" aria-label="5 star rating">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <p class="quote">“I didn’t even know if I needed gutters, grading, or drains. They pointed us to the right kind of contractor and saved us a ton of time.”</p>
+          <div class="t-meta">
+            <span><span class="t-name">James R.</span> <span class="t-loc">• Gadsden, AL</span></span>
+            <span class="t-stars" aria-label="5 star rating">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <p class="quote">“Super simple process. We submitted the form, got a call the same day, and finally understood what the ‘first step’ needed to be.”</p>
+          <div class="t-meta">
+            <span><span class="t-name">Kelsey T.</span> <span class="t-loc">• Scottsboro, AL</span></span>
+            <span class="t-stars" aria-label="5 star rating">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px; text-align:center;">
+        <button class="btn btn-dark" type="button"
+          data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+          onclick="return openTallyWithZip(true);">
+          Check Availability
+        </button>
       </div>
     </div>
   </section>
@@ -778,13 +883,13 @@
   <section class="section tight" id="formembed">
     <div class="container two-col">
       <div class="card">
-        <h2>Get matched with a local pro</h2>
+        <h2>Check availability and get matched</h2>
         <p class="lead">
-          Fill this out and we’ll match you with the right contractor type for your issue.
+          Fill this out and we’ll route you to the right contractor type for your issue.
           If your situation is urgent (active water near the foundation, wet crawl space, major erosion), submit now so a pro can reach out quickly.
         </p>
         <p class="lead" style="margin-bottom:0;">
-          <strong>Response time:</strong> We typically reach out in <strong>less than 24 hours</strong>.
+          <strong>Response time:</strong> Most requests get a callback in <strong>less than 24 hours</strong>.
         </p>
       </div>
 
@@ -792,7 +897,7 @@
         <div class="embedhead">
           <div>
             <strong>Quick Assessment Form</strong><br>
-            <span>2–3 minutes • helps route you to the right pro</span>
+            <span>~2 minutes • routes you to the right pro</span>
           </div>
         </div>
 
@@ -802,11 +907,11 @@
             data-tally-src="https://tally.so/embed/Gx9WQQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             loading="lazy"
             width="100%"
-            height="900"
+            height="640"
             frameborder="0"
             marginheight="0"
             marginwidth="0"
-            title="Get matched with a local pro">
+            title="Check availability">
           </iframe>
         </div>
       </div>
@@ -884,7 +989,7 @@
         <a href="#top">Top</a>
         <a href="#how">How It Works</a>
         <a href="#fixes">Common Fixes</a>
-        <a href="#formembed">Get Matched</a>
+        <a href="#formembed">Check Availability</a>
         <a href="#faq">FAQ</a>
         <a href="Privacy.html">Privacy</a>
       </div>
@@ -894,7 +999,7 @@
   <!-- MOBILE STICKY CTA -->
   <div class="sticky-cta" aria-label="Sticky call to action">
     <div class="inner">
-      <span>Standing water or erosion?<br/>Get matched fast.</span>
+      <span>Standing water or erosion?<br/>Check availability fast.</span>
       <button type="button"
         data-tally-open="Gx9WQQ"
         data-tally-emoji-text="👋"
@@ -910,7 +1015,6 @@
       return /^\d{5}(-\d{4})?$/.test(zip);
     }
 
-    // Optional: append ZIP to the embedded form URL (requires Tally field configured to read it)
     function setFormZip(zip){
       const frame = document.getElementById('tallyFrame');
       if(!frame) return;
@@ -944,10 +1048,9 @@
           if(target) target.scrollIntoView({behavior:'smooth'});
         }, 250);
       }
-      return true; // allow Tally popup
+      return true;
     }
 
-    // Load saved ZIP back into field
     (function(){
       try{
         const saved = localStorage.getItem("cf_zip");
@@ -956,18 +1059,12 @@
       }catch(e){}
     })();
 
-    // Ensure Tally embeds load reliably (and lock in dynamicHeight)
     (function(){
       var d=document,w="https://tally.so/widgets/embed.js";
       function v(){
         if(typeof Tally!=="undefined" && Tally.loadEmbeds){
           Tally.loadEmbeds();
-
-          // ✅ second pass helps dynamicHeight “settle” so it feels seamless
-          setTimeout(() => {
-            try { Tally.loadEmbeds(); } catch(e){}
-          }, 1200);
-
+          setTimeout(() => { try { Tally.loadEmbeds(); } catch(e){} }, 1200);
         } else {
           d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
             e.src=e.dataset.tallySrc;
